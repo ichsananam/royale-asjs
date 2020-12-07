@@ -133,7 +133,11 @@ limitations under the License.
             }
 
             private function navigateTo():void {
-                main.selectedContent = currentNavOption.hash;
+                if(currentNavOption.disabled)
+		{
+		   return;
+		}
+		main.selectedContent = currentNavOption.hash;
                 
                 if(!drawer.fixed)
                     drawer.close();
